@@ -10,7 +10,7 @@ __pycache__/
 .env
 
 # Dataset and large outputs
-data/
+/data/
 outputs/
 runs/
 checkpoints/
