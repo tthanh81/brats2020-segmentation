@@ -1,0 +1,25 @@
+{
+  "experiment": "unet3d_extended_20epochs_seed42",
+  "source_checkpoint_epoch": 10,
+  "start_epoch": 11,
+  "target_epoch": 20,
+  "validation_epochs": [
+    15,
+    20
+  ],
+  "source_global_step": 2568,
+  "source_best_val_dice": 0.6934340347433116,
+  "seed": 42,
+  "learning_rate": 0.0001,
+  "batch_size": 1,
+  "patch_size": [
+    96,
+    96,
+    96
+  ],
+  "positive_center_probability": 0.5,
+  "train_subjects": 257,
+  "validation_subjects": 55,
+  "source_checkpoint_sha256": "aef57f7452b00b42ba788045fccd5989fca4e954cd00530b7cfb096872a4ea91",
+  "test_set_used_for_model_selection": false
+}
