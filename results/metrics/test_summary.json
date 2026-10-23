@@ -1,0 +1,13 @@
+{
+    "checkpoint_epoch": 10,
+    "num_subjects": 56,
+    "WT": 0.7963757062985876,
+    "TC": 0.7036209000409969,
+    "ET": 0.6363200529006401,
+    "mean_dice": 0.7121055530800748,
+    "num_ET_present": 52,
+    "num_ET_absent": 4,
+    "ET_mean_when_present": 0.6852677492776125,
+    "total_time_seconds": 725.5452604780003,
+    "avg_time_seconds": 12.956165365678576
+}
