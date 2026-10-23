@@ -1,0 +1,11 @@
+# BraTS2020 segmentation - direct Python dependencies
+# Tested modular smoke-test environment (Kaggle): Python 3.13.15,
+# PyTorch 2.11.0+cu128, MONAI 1.6.1, NVIDIA Tesla T4.
+# These are NOT verified as the exact versions of the original 10-epoch run.
+# Install a CUDA-compatible PyTorch build for your GPU environment.
+torch>=2.4,<3.0
+monai>=1.6,<2.0
+numpy>=1.26,<3.0
+pandas>=2.0,<3.0
+nibabel>=5.0,<6.0
+matplotlib>=3.8,<4.0
