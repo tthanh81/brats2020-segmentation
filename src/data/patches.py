@@ -23,10 +23,12 @@ class RandomPatchDataset(Dataset):
         base_dataset,
         patch_size=(96, 96, 96),
         pos_prob=0.5,
+        augmentation=None,
     ):
         self.base_dataset = base_dataset
         self.patch_size = tuple(patch_size)
         self.pos_prob = float(pos_prob)
+        self.augmentation = augmentation
 
         if len(self.patch_size) != 3:
             raise ValueError(
@@ -147,10 +149,18 @@ class RandomPatchDataset(Dataset):
             d0:d0 + pd,
         ]
 
-        return {
+        
+        result = {
             "image": image_patch.contiguous(),
             "label": label_patch.contiguous(),
             "subject_id": sample["subject_id"],
             "center_type": center_type,
             "crop_start": tuple(starts),
         }
+
+        # Apply augmentation only when provided.
+        if self.augmentation is not None:
+            result = self.augmentation(result)
+
+        return result
+
