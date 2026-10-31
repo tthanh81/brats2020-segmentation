@@ -1,0 +1,35 @@
+{
+  "model": "M6",
+  "architecture": "SwinUNETR",
+  "checkpoint_epoch": 20,
+  "checkpoint_sha256": "02a2930122c3994fa72342921c719f1f001d540f4fb2e106fe293607ed527421",
+  "internal_test_subjects": 56,
+  "source": "User-verified Kaggle final test console output; NOT the original source JSON",
+  "mean_scores": {
+    "WT": 0.871992437,
+    "TC": 0.808353757,
+    "ET": 0.723875037,
+    "mean_dice": 0.801407077
+  },
+  "paired_patient_bootstrap_95pct_ci": {
+    "WT": [
+      0.849027628,
+      0.89257809
+    ],
+    "TC": [
+      0.757232951,
+      0.852441767
+    ],
+    "ET": [
+      0.648603617,
+      0.790751592
+    ],
+    "mean_dice": [
+      0.762349958,
+      0.836852589
+    ]
+  },
+  "empty_ET_targets": 4,
+  "internal_split_not_official_challenge_test": true,
+  "historical_test_access_exists_elsewhere_in_repository": true
+}
