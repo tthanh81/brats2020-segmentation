@@ -1,0 +1,88 @@
+
+{
+  "study_name": "brats2020_unet3d_optimization",
+  "protocol_version": 1,
+
+  "dataset": {
+    "name": "BraTS2020",
+    "split_manifest": "splits/split_manifest_seed42.csv",
+    "seed": 42,
+    "train_subjects": 257,
+    "validation_subjects": 55,
+    "test_subjects": 56,
+    "test_policy": "Do not use for training or model selection"
+  },
+
+  "reference_model": {
+    "model_id": "M1",
+    "architecture": "MONAI_3D_UNet",
+    "epochs_completed": 20,
+    "validation_mean_dice": 0.7575443313042411,
+    "best_epoch": 20
+  },
+
+  "controlled_training": {
+    "starting_checkpoint_epoch": 10,
+    "final_epoch": 20,
+    "validation_epochs": [15, 20],
+    "optimizer": "AdamW",
+    "learning_rate": 0.0001,
+    "batch_size": 1,
+    "patch_size": [96, 96, 96],
+    "positive_center_probability": 0.5,
+    "use_amp": true,
+    "gradient_clip_max_norm": 12.0
+  },
+
+  "evaluation": {
+    "primary_metric": "mean_validation_dice",
+    "regions": ["WT", "TC", "ET"],
+    "aggregation": "subject_macro_average",
+    "roi_size": [96, 96, 96],
+    "overlap": 0.25,
+    "checkpoint_selection": "highest_mean_validation_dice",
+    "compare_same_validation_subjects": true
+  },
+
+  "experiments": [
+    {
+      "id": "M2",
+      "name": "unet3d_augmentation",
+      "status": "planned",
+      "change": "data_augmentation"
+    },
+    {
+      "id": "M3",
+      "name": "unet3d_lr_scheduler",
+      "status": "planned",
+      "change": "learning_rate_schedule"
+    },
+    {
+      "id": "M4a",
+      "name": "unet3d_loss",
+      "status": "planned",
+      "change": "loss_function"
+    },
+    {
+      "id": "M4b",
+      "name": "unet3d_sampling",
+      "status": "planned",
+      "change": "patch_sampling"
+    },
+    {
+      "id": "M5",
+      "name": "unet3d_combined_optimization",
+      "status": "planned",
+      "change": "combine_validation_supported_improvements"
+    }
+  ],
+
+  "output_policy": {
+    "run_directory": "outputs/runs",
+    "save_latest_checkpoint": true,
+    "save_best_checkpoint": true,
+    "save_training_history": true,
+    "save_subject_level_validation": true,
+    "commit_checkpoints_to_git": false
+  }
+}
