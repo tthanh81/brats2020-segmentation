@@ -1,4 +1,4 @@
-# BraTS2020 Brain Tumor Segmentation — 3D U-Net and Swin UNETR
+# BraTS2020 Brain Tumor Segmentation - 3D U-Net and Swin UNETR
 
 **Research code and documented results** for multimodal 3D MRI brain tumor segmentation with PyTorch and MONAI. This repository began as a 3D U-Net baseline and was extended to seven evaluated configurations (M1, M2, M3, M4a, M4b, M5, M6). All comparisons below use a fixed **internal** validation split; M6 alone was selected for the final test of the current comparison workflow.
 
@@ -21,7 +21,7 @@
 
 M2–M5 extended the 3D U-Net training lineage from M1's epoch-10 checkpoint to epoch 20; M6 was initialized **from scratch** and trained for 20 epochs. Epoch counts therefore do not imply comparable computational cost. Consult the experiment records and [research overview](docs/M1_M6_RESEARCH_OVERVIEW.md) for detailed constraints.
 
-## 2. Internal validation results — all seven configurations
+## 2. Internal validation results - all seven configurations
 
 All metrics below are means on the **same 55 internal validation subjects**, using the reported epoch-20 checkpoints.
 
@@ -104,6 +104,6 @@ This is an internal, single-split research comparison with limited evidence for 
 Further background and experimental details:
 
 - [M1–M6 research overview](docs/M1_M6_RESEARCH_OVERVIEW.md)
-- [Original baseline README archived for historical reference](docs/README_LEGACY_BASELINE.md) — *describes the earlier state of the project and contains superseded status statements.*
+- [Original baseline README archived for historical reference](docs/README_LEGACY_BASELINE.md) - *describes the earlier state of the project and contains superseded status statements.*
 
 **Research/education use only; not a medical device.**
